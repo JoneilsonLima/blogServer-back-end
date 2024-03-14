@@ -40,10 +40,11 @@ public class PostController {
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping(value = "/{id}")
-    public ResponseEntity<Post> getPostById(@PathVariable(value = "id") Long id) {
+    @GetMapping(value = "/{id}/{likedPost}")
+    public ResponseEntity<Post> getPostById(@PathVariable(value = "id") Long id,
+                                            @PathVariable(value = "likedPost") boolean likedPost) {
         try {
-            Post post = postService.getPostById(id);
+            Post post = postService.getPostById(id, likedPost);
             return ResponseEntity.ok(post);
         } catch (Exception e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();

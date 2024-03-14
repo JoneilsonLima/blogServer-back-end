@@ -28,11 +28,13 @@ public class PostServiceImpl implements PostService{
         return postRepository.findAll();
     }
 
-    public Post getPostById(Long postId) {
+    public Post getPostById(Long postId, boolean likedPost) {
         Optional<Post> optionalPost = postRepository.findById(postId);
         if (optionalPost.isPresent()) {
             Post post = optionalPost.get();
-            post.setViewCount(post.getViewCount() + 1);
+            if (!likedPost) {
+                post.setViewCount(post.getViewCount() + 1);
+            }
             return postRepository.save(post);
         } else {
            throw new EntityNotFoundException("Post not found");
