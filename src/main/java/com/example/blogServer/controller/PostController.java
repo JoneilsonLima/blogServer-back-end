@@ -18,7 +18,7 @@ public class PostController {
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping
-    public ResponseEntity<?> createPost(@RequestBody Post post) {
+    public ResponseEntity<Post> createPost(@RequestBody Post post) {
         try {
             Post createdPost = postService.savePost(post);
             return ResponseEntity.status(HttpStatus.CREATED).body(createdPost);
@@ -35,6 +35,17 @@ public class PostController {
             return ResponseEntity.status(HttpStatus.OK).body(allPosts);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<Post> getPostById(@PathVariable(value = "id") Long id) {
+        try {
+            Post post = postService.getPostById(id);
+            return ResponseEntity.ok(post);
+        } catch (Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 }
