@@ -38,4 +38,15 @@ public class PostServiceImpl implements PostService{
            throw new EntityNotFoundException("Post not found");
         }
     }
+
+    public void likePost(Long id) {
+        Optional<Post> optionalPost = postRepository.findById(id);
+        if (optionalPost.isPresent()) {
+            Post post = optionalPost.get();
+            post.setLikeCount(post.getLikeCount() + 1);
+            postRepository.save(post);
+        } else {
+            throw new EntityNotFoundException("Post not found with id: " + id);
+        }
+    }
 }
