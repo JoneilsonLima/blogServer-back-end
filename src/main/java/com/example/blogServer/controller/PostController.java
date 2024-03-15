@@ -61,4 +61,13 @@ public class PostController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
     }
+
+    @GetMapping("/search/{name}")
+    public ResponseEntity<?> searchByName(@PathVariable(value = "name") String name) {
+        try {
+            return ResponseEntity.ok(postService.searchByName(name));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
 }

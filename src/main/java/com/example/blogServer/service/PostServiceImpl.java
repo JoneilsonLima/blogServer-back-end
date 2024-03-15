@@ -51,4 +51,8 @@ public class PostServiceImpl implements PostService{
             throw new EntityNotFoundException("Post not found with id: " + id);
         }
     }
+
+    public List<Post> searchByName(String name) {
+        return postRepository.findByNameContaining(name);
+    }
 }
