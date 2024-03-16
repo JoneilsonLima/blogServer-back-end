@@ -34,7 +34,7 @@ Antes de prosseguir, verifique se você tem os seguintes requisitos instalados e
 
 - `POST /api/posts`: Cadastra um novo post.
 - `GET /api/posts`: Retorna todos os posts.
-- `GET /api/posts/${postId}/${likedPost}`: Busca o post por id passando um outro parâmetro se está no visualizando no feed ou perfil.
+- `GET /api/posts/${postId}/${likedPost}`: Busca o post por id.
 - `PUT /api/posts/${postId}/like`: Curti um post.
 - `GET /api/posts/search/${name}`: Busca post pelo nome.
 - `POST /api/comments/create`: Cadastra um comentário em um post.
