@@ -62,3 +62,15 @@ GET /api/posts
    }
 ]
 ```
+
+## Configurações do banco de dados
+Você pode criar um banco de dados com PostgreSQL com o nome o nome de sua preferência, porém é necessario adequar o projeto de acordo com as suas configurações. Para isso abra o arquivo application.properties, localizado em `src/main/resources/application.properties` e altere os seguintes comandos ao arquivo:
+
+```
+spring.datasource.url=jdbc:postgresql://localhost:5432/postDb
+spring.datasource.username=root
+spring.datasource.password=root
+spring.jpa.hibernate.ddl-auto=update
+
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
+```
