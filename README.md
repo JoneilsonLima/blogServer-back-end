@@ -81,3 +81,5 @@ spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
 ## Buscando todos os comentários de um post
 ![comment-post](https://github.com/JoneilsonLima/blogServer-back-end/assets/73480168/bf7bff63-3105-4710-83e0-30221eae824b)
 
+### Swagger
+![swagger](https://github.com/JoneilsonLima/blogServer-back-end/assets/73480168/67ee2b12-37a8-4477-b648-14422d1a02fa)
