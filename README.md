@@ -73,3 +73,11 @@ spring.jpa.hibernate.ddl-auto=update
 
 spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
 ```
+
+# Capturas de Tela da Aplicação
+## Buscando todos os posts
+![get-post-2](https://github.com/JoneilsonLima/blogServer-back-end/assets/73480168/bc595958-eb25-4fc0-a5fb-b948f1551b85)
+
+## Buscando todos os comentários de um post
+![comment-post](https://github.com/JoneilsonLima/blogServer-back-end/assets/73480168/bf7bff63-3105-4710-83e0-30221eae824b)
+
